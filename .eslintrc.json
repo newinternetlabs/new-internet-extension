@@ -1,0 +1,24 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "webextensions": true
+  },
+  "plugins": ["standard", "promise"],
+  "extends": ["standard", "standard-preact"],
+  "settings": {
+    "react": {
+      "pragma": "h"
+    }
+  },
+  "globals": {
+    "document": true,
+    "navigator": false,
+    "window": true
+  },
+  "rules": {}
+}

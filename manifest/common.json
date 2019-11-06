@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "version": "0.9.0",
+  "name": "New Internet Extension",
+  "description": "Make sure web apps an't be evil",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16-gray.png",
+      "48": "icon48-gray.png",
+      "128": "icon128-gray.png"
+    }
+  },
+  "permissions": [
+    "tabs",
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "cookies",
+    "webNavigation",
+    "*://*/"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "background": {
+    "scripts": ["background_page.js"],
+    "persistent": true
+  }
+}
