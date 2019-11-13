@@ -10,10 +10,10 @@ You can install released versions from the [Chrome Web Store](https://chrome.goo
 
 ### Manual Installation
 
-To build the Firefox version for manual installation the following command and install from the `dist/` directory:
+To build the Firefox version for manual installation run the following command and install from the `dist/` directory:
 
 `npm run build:firefox`
 
-To build the Chrome version for manual installation the following command and install from the `dist/` directory:
+To build the Chrome version for manual installation run the following command and install from the `dist/` directory:
 
 `npm run build:chrome`
