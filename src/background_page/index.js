@@ -17,13 +17,14 @@
  * along with New Internet Extension.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import Storage from './storage'
+import Storage, { currentTabURLArray } from './storage'
 import { injectCspProcessor, ingestCspReport } from './csp'
 import { responseCookiesProcessor, requestCookiesProcessor } from './cookies'
-import { CSP_REPORT_KEY } from './constants'
+import { CSP_REPORT_KEY, PBC_BROWSER } from './constants'
 import { enabled, updateIcon } from './utils'
 
 const TabData = []
+
 
 // browser exists on firefox not chrome
 const isChrome = typeof browser === 'undefined'
@@ -116,6 +117,47 @@ chrome.webNavigation.onBeforeNavigate.addListener(data => {
       // main frame
       console.log('reseting app data')
       Storage.AppData.reset()
+      const tabId = data.tabId
+      const currentTabURLString = currentTabURLArray[tabId]
+
+      if (currentTabURLString) {
+        const currentTabURL = new URL(currentTabURLString)
+        const currentOrigin = currentTabURL.origin
+
+        const nextURL = new URL(data.url)
+        const nextOrigin = nextURL.origin
+        console.debug(`currentOrigin: ${currentOrigin}. nextOrigin: ${nextOrigin}`)
+        if (nextOrigin === PBC_BROWSER) {
+          console.debug('Redirecting to Blockstack authenticator')
+        } else if (nextOrigin !== currentOrigin) {
+          // chrome.tabs.executeScript(tabId, { code: "alert('Changing origins.')"})
+          // chrome.tabs.update(tabId), { url: currentTabURLString }
+          chrome.notifications.create({
+            type: 'basic',
+            iconUrl: null,
+            title:'Origin Change',
+            message: `Current: ${currentOrigin}.\nNext: ${nextOrigin}`
+        });
+        }
+
+
+
+      } else {
+        console.debug(`No current url found for tab id ${tabId}`)
+      }
     }
+  } else console.error(chrome.i18n.getMessage('inHandlerError'), e)
+})
+
+chrome.webNavigation.onCommitted.addListener(data => {
+  if (typeof data) {
+    console.log('onCommitted')
+    console.log(data)
+    if (data.parentFrameId < 0) { // 
+      const tabId = data.tabId
+      const url = data.url
+      currentTabURLArray[tabId] = url
+    }
+    
   } else console.error(chrome.i18n.getMessage('inHandlerError'), e)
 })

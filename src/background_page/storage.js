@@ -172,6 +172,7 @@ export class AppData {
 }
 
 export const tabDataArray = []
+export const currentTabURLArray = []
 
 const ALL_SITES_KEY = 'allSites'
 const REPORTING_ENABLED_KEY = 'reportingEnabled'

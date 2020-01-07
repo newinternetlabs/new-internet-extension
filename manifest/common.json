@@ -18,6 +18,7 @@
   },
   "permissions": [
     "tabs",
+    "notifications",
     "storage",
     "webRequest",
     "webRequestBlocking",
