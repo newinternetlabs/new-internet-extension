@@ -51,7 +51,7 @@ export function getHeaderValue (headerName, headers) {
 }
 
 /**
- * Returns true if the `can't-be-evil` header exists and is set to `true`,
+ * Returns true if the `cant-be-evil` header exists and is set to `true`,
  * otherwise false
  * @param {Array} headers
  */
