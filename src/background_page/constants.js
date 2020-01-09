@@ -22,7 +22,7 @@ export const AUTH_PATH = '/auth'
 export const AUTH_SEARCH = '?authRequest='
 export const CONFIG_STORAGE_KEY = 'config'
 export const APP_DATA_STORAGE_KEY = 'apps'
-export const OPT_IN_HEADER_NAME = "can't-be-evil"
+export const OPT_IN_HEADER_NAME = "cant-be-evil"
 export const CSP_REPORT_KEY = 'cantbeevil-csp-report'
 
 export const ICONS_GRAY = {
