@@ -38,7 +38,7 @@ export function injectCspProcessor (details) {
   const imageCsp = "img-src 'self' data: blob:;"
   const fontCsp = "font-src 'self' data: blob:;"
   const mediaCsp = "media-src 'self' data: blob:;"
-  const objectCsp = "object-src 'self';"
+  const objectCsp = "object-src 'self' data: blob:;"
   const prefetchCsp = "prefetch-src 'self';"
   // const childCsp = "child-src 'self' data: blob: blockstack:;"
   const frameCsp = "frame-src 'self' data: blob: blockstack:;"
@@ -46,7 +46,7 @@ export function injectCspProcessor (details) {
   const formActionCsp = "form-action 'self';"
   const manifestCsp = "manifest-src 'self';"
   const disownOpener = 'disown-opener;'
-  const connectCsp = 'connect-src *;'
+  const connectCsp = 'connect-src * data: blob:;'
   const reportUri = `report-uri /${CSP_REPORT_KEY}`
 
   const reportingEnabled = Config.isReportingEnabled()
