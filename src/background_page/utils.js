@@ -18,7 +18,7 @@
  */
 
 import {
-  OPT_IN_HEADER_NAME,
+  OPT_IN_HEADER_NAMES,
   ICONS_COLOR,
   ICONS_GRAY,
   ICONS_GRAY_EVIL,
@@ -51,7 +51,7 @@ export function getHeaderValue (headerName, headers) {
 }
 
 /**
- * Returns true if the `cant-be-evil` header exists and is set to `true`,
+ * Returns true if *any* of the value opt-in headers exist and is set to `true`,
  * otherwise false
  * @param {Array} headers
  */
@@ -59,10 +59,12 @@ export function hasOptInNotEvilHeader (headers) {
   let i = headers.length
   while (i > 0) {
     i -= 1
-    if (headers[i].name.toLowerCase() === OPT_IN_HEADER_NAME) {
-      const value = headers[i].value
-      if (value.toLowerCase() === 'true') {
-        return true
+    for(let j = 0; j < OPT_IN_HEADER_NAMES.length; j++) {
+      if (headers[i].name.toLowerCase() === OPT_IN_HEADER_NAMES[j]) {
+        const value = headers[i].value
+        if (value.toLowerCase() === 'true') {
+          return true
+        }
       }
     }
   }
