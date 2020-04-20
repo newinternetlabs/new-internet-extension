@@ -28,7 +28,7 @@ Cookies are legacy technology from the pre-JavaScript days when web apps were en
 
 ## How do I protect users of my app by opting in to the Can’t Be Evil Sandbox?
 1. Make sure all of your scripts, fonts and other assets are delivered from the same origin (domain name) as your app
-2. Configure your server to send the http header `can't-be-evil` with a value of `true`.
+2. Configure your server to send the http header `cant-be-evil` with a value of `true`.
 
 ## I have more questions, where should I ask them?
 

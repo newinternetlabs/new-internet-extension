@@ -18,7 +18,7 @@
  */
 
 import { removeHeaders, enabled, updateIcon } from './utils'
-import { OPT_IN_HEADER_NAME } from './constants'
+import { OPT_IN_HEADER_NAMES } from './constants'
 import { AppData, tabDataArray, Config } from './storage'
 import { CSP_REPORT_KEY } from './constants'
 

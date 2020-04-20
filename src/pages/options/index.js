@@ -28,7 +28,7 @@ import {
   CSSReset,
   Text
 } from '@chakra-ui/core'
-import { OPT_IN_HEADER_NAME } from '../../background_page/constants'
+import { OPT_IN_HEADER_NAMES } from '../../background_page/constants'
 
 class App extends React.Component {
   constructor (props) {
@@ -75,7 +75,7 @@ class App extends React.Component {
         <Heading as='h2'>Can't Be Evil Sandbox</Heading>
         <Text>
           The sandbox is enabled by default on sites that opt in by sending the
-          HTTP header <code>{OPT_IN_HEADER_NAME}: false</code>
+          HTTP header <code>{OPT_IN_HEADER_NAMES}: false</code>
         </Text>
         <Checkbox isChecked={allSites} onChange={this.allSitesChanged}>
           Enable enforcement for all sites
