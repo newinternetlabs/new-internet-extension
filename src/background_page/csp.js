@@ -30,7 +30,6 @@ export function injectCspProcessor (details) {
   const enforce = enabled(headers)
   tabDataArray[tabId] = { enforce, compliant: true }
 
-  const sandboxCsp = 'sandbox allow-scripts allow-same-origin;'
   const scriptCsp =
     "script-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval';"
   const styleCsp =
@@ -51,7 +50,7 @@ export function injectCspProcessor (details) {
 
   const reportingEnabled = Config.isReportingEnabled()
   const includeReportDirective = enforce || reportingEnabled
-  const cspValue = `default-src 'none'; ${sandboxCsp} ${scriptCsp} ${styleCsp} ${imageCsp} ${fontCsp} ${mediaCsp} ${objectCsp} ${prefetchCsp} ${frameCsp} ${workerCsp} ${formActionCsp} ${manifestCsp} ${disownOpener} ${connectCsp} ${includeReportDirective
+  const cspValue = `default-src 'none'; ${scriptCsp} ${styleCsp} ${imageCsp} ${fontCsp} ${mediaCsp} ${objectCsp} ${prefetchCsp} ${frameCsp} ${workerCsp} ${formActionCsp} ${manifestCsp} ${disownOpener} ${connectCsp} ${includeReportDirective
     ? reportUri
     : ''}`
 
