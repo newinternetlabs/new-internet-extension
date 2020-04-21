@@ -10,6 +10,8 @@ You can install released versions from the [Chrome Web Store](https://chrome.goo
 
 ### Manual Installation
 
+Distribution packages are built with node v12.16.2 and npm v6.14.4 on macOS 10.15.4 (19E287).
+
 To build the Firefox version for manual installation run the following command and install from the `dist/` directory:
 
 `npm run build:firefox`
