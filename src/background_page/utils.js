@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 New Internet Labs Limited
+ * Copyright 2019-2020 New Internet Labs Limited
  *
  * This file is part of New Internet Extension (https://newinternetextension.com).
  *
@@ -59,7 +59,7 @@ export function hasOptInNotEvilHeader (headers) {
   let i = headers.length
   while (i > 0) {
     i -= 1
-    for(let j = 0; j < OPT_IN_HEADER_NAMES.length; j++) {
+    for (let j = 0; j < OPT_IN_HEADER_NAMES.length; j++) {
       if (headers[i].name.toLowerCase() === OPT_IN_HEADER_NAMES[j]) {
         const value = headers[i].value
         if (value.toLowerCase() === 'true') {

@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 New Internet Labs Limited
+ * Copyright 2019-2020 New Internet Labs Limited
  *
  * This file is part of New Internet Extension (https://newinternetextension.com).
  *
@@ -22,7 +22,7 @@ export const AUTH_PATH = '/auth'
 export const AUTH_SEARCH = '?authRequest='
 export const CONFIG_STORAGE_KEY = 'config'
 export const APP_DATA_STORAGE_KEY = 'apps'
-export const OPT_IN_HEADER_NAMES = ["cant-be-evil", "can't-be-evil"]
+export const OPT_IN_HEADER_NAMES = ['cant-be-evil', "can't-be-evil"]
 export const CSP_REPORT_KEY = 'cantbeevil-csp-report'
 
 export const ICONS_GRAY = {

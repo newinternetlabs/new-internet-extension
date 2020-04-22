@@ -1,5 +1,5 @@
 /**
- * Copyright 2019 New Internet Labs Limited
+ * Copyright 2019-2020 New Internet Labs Limited
  *
  * This file is part of New Internet Extension (https://newinternetextension.com).
  *
