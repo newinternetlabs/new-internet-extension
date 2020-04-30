@@ -132,6 +132,7 @@ class App extends React.Component {
                 appSendsCookie={appSendsCookie}
                 serverSetsCookie={serverSetsCookie}
                 reportingEnabled={reportingEnabled}
+                enforced={enforced}
               />
               <BlockedRequests
                 appSendsCookie={appSendsCookie}
