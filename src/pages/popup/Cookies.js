@@ -28,7 +28,7 @@ class Cookies extends React.Component {
   render () {
     const props = this.props
     const cookieWarningTags = []
-    if (props.serverSetsCookie) {
+    if (props.serverSetsCookie && !props.enforced) {
       cookieWarningTags.push(
         <Tag variantColor='red' size='sm' key='1'>
           <TagLabel>Server sent cookies</TagLabel>
@@ -37,7 +37,7 @@ class Cookies extends React.Component {
       )
     }
 
-    if (props.appSendsCookie) {
+    if (props.appSendsCookie && !props.enforced) {
       cookieWarningTags.push(
         <Tag variantColor='red' size='sm' key='2'>
           <TagLabel>App sent cookies</TagLabel>
@@ -47,18 +47,19 @@ class Cookies extends React.Component {
     }
     return (
       <Box w='100%'>
-        {!props.appSendsCookie && !props.serverSetsCookie ? (
+        {(!props.appSendsCookie && !props.serverSetsCookie) ||
+        props.enforced ? (
           <Stack spacing={2} isInline p='1'>
-            <Tag variantColor='purple' size='sm'>
+              <Tag variantColor='purple' size='sm'>
               <TagLabel>No cookies</TagLabel>
               <TagIcon icon='check' />
             </Tag>
-          </Stack>
-        ) : (
-          <Stack spacing={2} isInline p='1'>
-            {cookieWarningTags}
-          </Stack>
-        )}
+            </Stack>
+          ) : (
+            <Stack spacing={2} isInline p='1'>
+              {cookieWarningTags}
+            </Stack>
+          )}
       </Box>
     )
   }
