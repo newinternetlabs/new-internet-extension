@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "0.9.1",
+  "version": "1.0.0",
   "name": "New Internet Extension",
   "description": "Make sure web apps can't be evil",
   "icons": {
