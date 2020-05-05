@@ -92,6 +92,7 @@ class App extends React.Component {
 ReactDOM.render(
   <ThemeProvider>
     <CSSReset />
+    <style>{`input[type=checkbox] { display: none }`}</style>
     <ColorModeProvider>
       <App />
     </ColorModeProvider>

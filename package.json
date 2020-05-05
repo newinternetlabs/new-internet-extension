@@ -76,9 +76,9 @@
   },
   "dependencies": {
     "@chakra-ui/core": "^0.2.8",
-    "@emotion/core": "^10.0.17",
-    "@emotion/styled": "^10.0.17",
-    "emotion-theming": "^10.0.17",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion-theming": "^10.0.27",
     "jsontokens": "^2.0.2",
     "material-components-web": "^0.19.0",
     "react": "^16.9.0",
