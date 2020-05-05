@@ -75,7 +75,7 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "@chakra-ui/core": "^0.2.6",
+    "@chakra-ui/core": "^0.2.8",
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
     "emotion-theming": "^10.0.17",

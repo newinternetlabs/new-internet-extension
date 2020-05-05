@@ -70,12 +70,13 @@ class App extends React.Component {
     const reportingEnabled = this.state.reportingEnabled
     const allSites = this.state.allSites
     return (
-      <Stack spacing={5}>
-        <Heading as='h1'>New Internet Extension</Heading>
-        <Heading as='h2'>Can't Be Evil Sandbox</Heading>
+      <Stack spacing={5} style={{ padding: '20px' }}>
+        <Heading as='h1'>Can't Be Evil Sandbox</Heading>
         <Text>
-          The sandbox is enabled by default on sites that opt in by sending the
-          HTTP header <code>{OPT_IN_HEADER_NAMES}: false</code>
+          The Can't Be Evil Sandbox is enabled by default on sites that opt-in
+          by sending the HTTP header{' '}
+          <code>{OPT_IN_HEADER_NAMES[0]}: false </code> or
+          <code> {OPT_IN_HEADER_NAMES[1]}: false</code>
         </Text>
         <Checkbox isChecked={allSites} onChange={this.allSitesChanged}>
           Enable enforcement for all sites
