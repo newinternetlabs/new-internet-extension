@@ -5,8 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [1.0.0] - 2020-05-06
- - Improvements to the options dialog to make it look better on Chrome
- - Don't report attempted cookies on sites that opt-in to the sandbox since many do not have control over cookies. 
+
+### Changed
+ - Improvements to the options dialog to make it look better on Chrome #32
+ - Don't report attempted cookies on sites that opt-in to the sandbox since many do not have control over cookies #19
 
 ## [0.9.1] - 2020-04-22
 
